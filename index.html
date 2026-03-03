@@ -1,1 +1,827 @@
-<html><body><h1>Coming Soon</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Havana Sugar | The Sweet Side of Havana</title>
+  <meta name="description" content="Havana Sugar — premium Cuban lifestyle brand celebrating the finest sugar, rum, coffee, and cigars. Experience the rich heritage of Cuba's most celebrated pleasures." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://havanasugar.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://havanasugar.com" />
+  <meta property="og:title" content="Havana Sugar | The Sweet Side of Havana" />
+  <meta property="og:description" content="Premium Cuban lifestyle brand celebrating the finest sugar, rum, coffee, and cigars from Havana." />
+  <meta property="og:image" content="https://havanasugar.com/og-image.jpg" />
+  <meta property="og:site_name" content="Havana Sugar" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Havana Sugar | The Sweet Side of Havana" />
+  <meta name="twitter:description" content="Premium Cuban lifestyle brand celebrating the finest sugar, rum, coffee, and cigars." />
+  <meta name="twitter:image" content="https://havanasugar.com/og-image.jpg" />
+
+  <!-- Schema.org Brand -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "Havana Sugar",
+    "url": "https://havanasugar.com",
+    "email": "info@havanasugar.com",
+    "description": "Premium Cuban lifestyle brand celebrating the finest sugar, rum, coffee, and cigars from Havana.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Havana Sugar"
+    },
+    "foundingLocation": {
+      "@type": "City",
+      "name": "Havana",
+      "addressCountry": "CU"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============ RESET & BASE ============ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f4f1ea;
+      --cream-dark: #e8e4d8;
+      --terracotta: #e07b58;
+      --terracotta-dark: #c4623d;
+      --brown: #4c3b30;
+      --brown-dark: #382c22;
+      --orange: #f7aa52;
+      --orange-light: #ffd08a;
+      --text-body: #3a2d24;
+      --text-muted: #8a7060;
+      --border: rgba(76,59,48,0.18);
+      --border-warm: rgba(224,123,88,0.25);
+      --white: #fff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    /* ============ ANIMATIONS ============ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50%       { transform: translateY(-10px) rotate(2deg); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50%       { transform: rotate(3deg); }
+    }
+    @keyframes lineGrow { from { width: 0; } to { width: 60px; } }
+    @keyframes patternShift {
+      0%   { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+
+    .animate-fade-up  { animation: fadeUp 0.8s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.35s; }
+    .delay-4 { animation-delay: 0.5s; }
+    .delay-5 { animation-delay: 0.65s; }
+
+    /* ============ NAV ============ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      background: rgba(244,241,234,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--terracotta); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-cta {
+      background: var(--terracotta) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--terracotta-dark) !important; transform: translateY(-1px); }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(224,123,88,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 30%, rgba(247,170,82,0.12) 0%, transparent 45%),
+        linear-gradient(160deg, var(--brown-dark) 0%, var(--brown) 50%, #5c4535 100%);
+      padding-top: 5rem;
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(244,241,234,0.03) 0px, rgba(244,241,234,0.03) 1px,
+        transparent 1px, transparent 40px
+      );
+      animation: patternShift 8s linear infinite;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 860px;
+      padding: 2rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(244,241,234,0.1);
+      border: 1px solid rgba(244,241,234,0.2);
+      border-radius: 100px;
+      padding: 0.45rem 1.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--cream);
+    }
+    .hero-title .accent {
+      background: linear-gradient(135deg, var(--terracotta), var(--orange), var(--orange-light));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(244,241,234,0.65);
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--terracotta), var(--orange));
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(224,123,88,0.45);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(224,123,88,0.6); }
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: 1px solid rgba(244,241,234,0.3);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--orange); background: rgba(247,170,82,0.1); }
+
+    /* ============ INTRO STRIP ============ */
+    .intro-strip {
+      background: var(--cream);
+      padding: 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .intro-strip p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ============ SECTIONS ============ */
+    section { padding: 7rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--brown);
+    }
+    .section-title .light { color: var(--text-body); }
+    .section-subtitle {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+    .divider-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--orange));
+      border-radius: 2px;
+      margin: 1rem 0 2rem;
+      animation: lineGrow 0.8s ease both;
+    }
+
+    /* ============ PRODUCTS SECTION ============ */
+    .products-bg { background: var(--cream-dark); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem 2rem 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--terracotta), var(--orange));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .product-card:hover::after { transform: scaleX(1); }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(76,59,48,0.12); }
+    .product-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      animation: float 5s ease-in-out infinite;
+    }
+    .product-card:nth-child(2) .product-emoji { animation-delay: 0.8s; }
+    .product-card:nth-child(3) .product-emoji { animation-delay: 1.5s; }
+    .product-card:nth-child(4) .product-emoji { animation-delay: 2.2s; }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.6rem;
+    }
+    .product-origin {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.9rem;
+    }
+    .product-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .product-tag {
+      display: inline-block;
+      background: rgba(224,123,88,0.1);
+      border: 1px solid rgba(224,123,88,0.3);
+      color: var(--terracotta-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    /* ============ HERITAGE STORY ============ */
+    .heritage-bg {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(224,123,88,0.08) 0%, transparent 50%),
+        var(--cream);
+    }
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .heritage-visual {
+      position: relative;
+    }
+    .heritage-card {
+      background: linear-gradient(145deg, var(--brown) 0%, var(--brown-dark) 100%);
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .heritage-card::before {
+      content: '🌿';
+      position: absolute;
+      top: -10px; right: -10px;
+      font-size: 8rem;
+      opacity: 0.06;
+    }
+    .heritage-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+    .heritage-quote-mark {
+      font-size: 5rem;
+      color: var(--terracotta);
+      opacity: 0.4;
+      font-family: 'Playfair Display', serif;
+      line-height: 0.5;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .heritage-attr { font-size: 0.85rem; color: var(--orange); font-weight: 500; }
+    .heritage-timeline { list-style: none; position: relative; padding-left: 2rem; }
+    .heritage-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--terracotta), transparent);
+    }
+    .heritage-timeline li {
+      position: relative;
+      padding-bottom: 2.2rem;
+      padding-left: 1rem;
+    }
+    .heritage-timeline li::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      transform: translateX(calc(50% - 1px));
+    }
+    .timeline-year {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    .timeline-text strong { color: var(--brown); }
+
+    /* ============ SIGNUP ============ */
+    .signup-bg {
+      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%);
+      border-top: 1px solid rgba(76,59,48,0.3);
+    }
+    .signup-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .signup-inner .section-tag { color: var(--orange); }
+    .signup-inner .section-title { color: var(--cream); }
+    .signup-inner p { color: rgba(244,241,234,0.6); }
+    .signup-form {
+      background: rgba(244,241,234,0.06);
+      border: 1px solid rgba(244,241,234,0.12);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-top: 2.5rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244,241,234,0.5);
+    }
+    .form-group input {
+      background: rgba(244,241,234,0.08);
+      border: 1px solid rgba(244,241,234,0.15);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(224,123,88,0.15); }
+    .form-group input::placeholder { color: rgba(244,241,234,0.25); }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--terracotta), var(--orange));
+      color: var(--white);
+      padding: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 20px rgba(224,123,88,0.35);
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(224,123,88,0.55); }
+    .form-note { font-size: 0.75rem; color: rgba(244,241,234,0.35); margin-top: 1rem; }
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--orange);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--brown-dark);
+      border-top: 1px solid rgba(76,59,48,0.5);
+      padding: 3.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+    .footer-logo span { color: var(--terracotta); }
+    .footer-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: rgba(244,241,234,0.4);
+      font-size: 0.9rem;
+    }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { color: rgba(244,241,234,0.4); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-divider { width: 100%; height: 1px; background: rgba(76,59,48,0.5); }
+    .footer-copy { font-size: 0.8rem; color: rgba(244,241,234,0.3); }
+    .footer-email { font-size: 0.82rem; color: var(--terracotta); }
+    .footer-email a { color: inherit; text-decoration: none; }
+    .footer-email a:hover { color: var(--orange); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .heritage-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .signup-form { padding: 2rem 1.5rem; }
+      section { padding: 5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Havana<span>Sugar</span></a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#heritage">Heritage</a></li>
+      <li><a href="#join" class="nav-cta">Join the List</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">Premium Cuban Lifestyle Brand</div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        Havana<br/><span class="accent">Sugar</span>
+      </h1>
+      <p class="hero-tagline animate-fade-up delay-2">The Sweet Side of Havana</p>
+      <p class="hero-subtitle animate-fade-up delay-3">
+        From the fields of Camagüey to the streets of Old Havana — we curate the finest expressions
+        of Cuba's most celebrated pleasures for the world's most discerning palates.
+      </p>
+      <div class="hero-actions animate-fade-up delay-4">
+        <a href="#products" class="btn-primary">Explore Our World</a>
+        <a href="#join" class="btn-outline">Join the Inner Circle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <p>
+      "Cuba has always been a place of extraordinary sensory richness — the scent of sugarcane,
+      the amber warmth of aged rum, the dark velvet of a morning café.
+      <em>Havana Sugar</em> is our tribute to all of it."
+    </p>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products-bg" id="products">
+    <div class="section-inner">
+      <p class="section-tag animate-fade-up">The Collection</p>
+      <h2 class="section-title animate-fade-up delay-1">Cuba's Finest<br/><span class="light">Four Treasures</span></h2>
+      <div class="divider-line"></div>
+      <p class="section-subtitle animate-fade-up delay-2">
+        Each category represents centuries of Cuban craftsmanship, passion, and a way of life
+        that cannot be replicated anywhere else on earth.
+      </p>
+      <div class="products-grid">
+
+        <!-- Sugar -->
+        <div class="product-card animate-fade-up delay-1">
+          <span class="product-emoji">🍬</span>
+          <p class="product-origin">Camagüey Province</p>
+          <h3 class="product-name">Cuban Sugar</h3>
+          <p class="product-desc">
+            Raw, unrefined, and sun-kissed — Cuban sugar carries a natural richness that refined varieties simply cannot match. From dark muscovado to golden turbinado, each grain tells a story of the soil.
+          </p>
+          <span class="product-tag">Artisan Harvest</span>
+        </div>
+
+        <!-- Rum -->
+        <div class="product-card animate-fade-up delay-2">
+          <span class="product-emoji">🥃</span>
+          <p class="product-origin">Havana & Santiago</p>
+          <h3 class="product-name">Cuban Rum</h3>
+          <p class="product-desc">
+            Aged in white oak barrels under the Caribbean sun, Cuban rum achieves a smoothness and complexity that sets it apart. Light, fragrant, endlessly sippable — or the soul of a perfect Mojito.
+          </p>
+          <span class="product-tag">Barrel Aged</span>
+        </div>
+
+        <!-- Coffee -->
+        <div class="product-card animate-fade-up delay-3">
+          <span class="product-emoji">☕</span>
+          <p class="product-origin">Sierra Maestra</p>
+          <h3 class="product-name">Cuban Coffee</h3>
+          <p class="product-desc">
+            Grown in the misty highlands of the Sierra Maestra, Cuban coffee is roasted dark, brewed strong, and served sweet. One sip of <em>café cubano</em> and you understand why it's non-negotiable.
+          </p>
+          <span class="product-tag">Mountain Grown</span>
+        </div>
+
+        <!-- Cigars -->
+        <div class="product-card animate-fade-up delay-4">
+          <span class="product-emoji">🚬</span>
+          <p class="product-origin">Vuelta Abajo, Pinar del Río</p>
+          <h3 class="product-name">Cuban Cigars</h3>
+          <p class="product-desc">
+            Vuelta Abajo tobacco is the finest in the world — period. Hand-rolled by maestros who learned the craft from generations before them, a Cuban cigar is a ceremony unto itself.
+          </p>
+          <span class="product-tag">Hand-Rolled</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE STORY -->
+  <section class="heritage-bg" id="heritage">
+    <div class="section-inner">
+      <div class="heritage-grid">
+        <div class="animate-fade-up delay-1">
+          <div class="heritage-card">
+            <span class="heritage-quote-mark">"</span>
+            <p class="heritage-quote">
+              In Havana, pleasure is not a luxury — it is a philosophy.
+              The sweetness of the sugarcane, the depth of aged rum,
+              the ritual of coffee, the leisure of a fine cigar —
+              these are not indulgences, they are the very texture of life.
+            </p>
+            <p class="heritage-attr">— The Havana Sugar Philosophy</p>
+          </div>
+        </div>
+        <div class="animate-fade-up delay-2">
+          <p class="section-tag">Our Heritage</p>
+          <h2 class="section-title">Centuries of<br/>Cuban Craft</h2>
+          <div class="divider-line"></div>
+          <ul class="heritage-timeline">
+            <li>
+              <p class="timeline-year">16th Century</p>
+              <p class="timeline-text">Spanish colonizers plant the first <strong>sugarcane fields</strong> in Cuba — the island's landscape and economy transform forever.</p>
+            </li>
+            <li>
+              <p class="timeline-year">18th Century</p>
+              <p class="timeline-text">Cuba becomes the world's largest sugar producer. <strong>Rum distilleries</strong> spring up alongside the great sugar mills.</p>
+            </li>
+            <li>
+              <p class="timeline-year">19th Century</p>
+              <p class="timeline-text">The first <strong>Havana cigar brands</strong> are established. Vuelta Abajo tobacco earns its global reputation for unmatched quality.</p>
+            </li>
+            <li>
+              <p class="timeline-year">20th Century</p>
+              <p class="timeline-text">Cuban <strong>café cubano</strong> culture emerges as a cornerstone of daily life. The morning <em>colada</em> becomes sacred ritual.</p>
+            </li>
+            <li>
+              <p class="timeline-year">Today</p>
+              <p class="timeline-text">Havana Sugar honors these four traditions, curating <strong>the finest expressions</strong> of Cuban craftsmanship for a global audience.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="signup-bg" id="join">
+    <div class="signup-inner">
+      <p class="section-tag animate-fade-up">Inner Circle</p>
+      <h2 class="section-title animate-fade-up delay-1" style="color:var(--cream);">Join the<br/>Havana Sugar Club</h2>
+      <div class="divider-line" style="margin:1rem auto 2rem;"></div>
+      <p class="animate-fade-up delay-2" style="color:rgba(244,241,234,0.55);font-size:0.95rem;line-height:1.7;">
+        Be the first to experience our curated collections, exclusive stories from Havana,
+        and invitations to private tastings as the brand launches.
+      </p>
+      <div class="signup-form animate-fade-up delay-3">
+        <form id="signup-form-hs">
+          <div class="form-row" style="margin-bottom:1rem;">
+            <div class="form-group">
+              <label for="hs-name">Your Name</label>
+              <input type="text" id="hs-name" name="name" placeholder="Isabella García" required />
+            </div>
+            <div class="form-group">
+              <label for="hs-email">Email Address</label>
+              <input type="email" id="hs-email" name="email" placeholder="isabella@email.com" required />
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Join the Inner Circle →</button>
+          <p class="form-note">🌿 We respect your privacy. Curated content only, never spam.</p>
+        </form>
+        <div class="success-msg" id="hs-success">
+          🍬 Welcome to the Inner Circle!<br/>
+          <span style="font-size:1rem;font-family:Inter,sans-serif;color:rgba(244,241,234,0.6);font-weight:300;">The sweet side of Havana awaits you.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Havana<span>Sugar</span></div>
+      <p class="footer-tagline">The Sweet Side of Havana</p>
+      <nav>
+        <div class="footer-links">
+          <a href="#products">The Collection</a>
+          <a href="#heritage">Our Heritage</a>
+          <a href="#join">Join</a>
+          <a href="mailto:info@havanasugar.com">Contact</a>
+        </div>
+      </nav>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2026 Havana Sugar. All rights reserved.</p>
+      <p class="footer-email"><a href="mailto:info@havanasugar.com">info@havanasugar.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Intersection Observer
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-fade-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      observer.observe(el);
+    });
+
+    // Native form fallback
+    document.getElementById('signup-form-hs').addEventListener('submit', function(e) {
+      if (typeof initSignupForm === 'undefined') {
+        e.preventDefault();
+        this.style.display = 'none';
+        document.getElementById('hs-success').style.display = 'block';
+      }
+    });
+  </script>
+
+  <script src="../supabase-signup.js"></script>
+  <script>initSignupForm('havanasugar.com')</script>
+</body>
+</html>
